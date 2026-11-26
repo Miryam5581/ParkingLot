@@ -23,9 +23,9 @@ namespace ParkingApp.Tests
         public void ParkCar_UsesTheLastFreeSpot()
         {
             var lot = new ParkingLot();
-            lot.ParkCar("11-111-11", "Lior");
+            lot.ParkCar("11-111-11", "Lior", "white");
 
-            var result = lot.ParkCar("22-222-22", "Tal");
+            var result = lot.ParkCar("22-222-22", "Tal", "white");
 
             Assert.Equal(5, result);
         }
