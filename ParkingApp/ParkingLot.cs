@@ -88,7 +88,9 @@ namespace ParkingApp
         // Returns the fee, or -1 when there is no car to remove.
         public int RemoveCar(int spotNumber, int minutes)
         {
+           
             int index = spotNumber - 1;
+
 
             if (index < 0 || index >= spots.Length)
             {
@@ -96,6 +98,10 @@ namespace ParkingApp
             }
 
             Car car = spots[index];
+            if (car == null)
+            {
+                return -1;
+            }
             Console.WriteLine("Car " + car.GetPlate() + " is leaving spot " + spotNumber + ".");
 
             int fee = CalculateFee(minutes);
